@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Vozes Livres: prevenção à violência, acolhimento e autonomia para mulheres.">
+  <title>Vozes Livres | Acolher, proteger e transformar</title>
+  <style>
+/* Design system: cores, tipografia, espacamento e formas */
+:root {
+  color-scheme: light;
+  --roxo: #642d63;
+  --roxo-escuro: #40203f;
+  --roxo-claro: #8c5688;
+  --rosa: #f7e9f2;
+  --rosa-forte: #e8bfd8;
+  --coral: #e87978;
+  --coral-escuro: #bd5356;
+  --verde: #477a63;
+  --verde-claro: #e4f1e9;
+  --texto: #302631;
+  --texto-suave: #675b67;
+  --fundo: #fffafc;
+  --branco: #ffffff;
+  --cinza-100: #f7f4f7;
+  --cinza-200: #e8e1e8;
+  --cinza-500: #817681;
+  --alerta: #a54135;
+  --alerta-fundo: #fff0ed;
+  --sucesso: #286746;
+  --sucesso-fundo: #e8f6ed;
+  --info: #285a82;
+  --info-fundo: #eaf5ff;
+  --fonte-corpo: Arial, Helvetica, sans-serif;
+  --fonte-titulo: Georgia, 'Times New Roman', serif;
+  --texto-xs: .75rem;
+  --texto-sm: .875rem;
+  --texto-base: 1rem;
+  --texto-lg: 1.125rem;
+  --texto-xl: 1.375rem;
+  --texto-2xl: 1.875rem;
+  --texto-3xl: clamp(2.25rem, 5vw, 4.25rem);
+  --espaco-1: 8px;
+  --espaco-2: 16px;
+  --espaco-3: 24px;
+  --espaco-4: 32px;
+  --espaco-5: 48px;
+  --espaco-6: 64px;
+  --raio-sm: 8px;
+  --raio-md: 16px;
+  --raio-lg: 28px;
+  --sombra: 0 14px 40px rgba(64, 32, 63, .10);
+  --largura-max: 1160px;
+  --foco: 0 0 0 4px rgba(232, 121, 120, .35);
+}
+</style><style>
+/* Regras globais, tipografia e acessibilidade */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+body { margin: 0; color: var(--texto); background: var(--fundo); font-family: var(--fonte-corpo); font-size: var(--texto-base); line-height: 1.65; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: var(--roxo); text-underline-offset: 4px; }
+a:hover { color: var(--coral-escuro); }
+button, input, select, textarea { font: inherit; }
+button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 3px solid var(--coral); outline-offset: 3px; box-shadow: var(--foco); }
+::selection { color: var(--branco); background: var(--roxo); }
+h1, h2, h3, h4 { margin: 0 0 var(--espaco-2); color: var(--roxo-escuro); font-family: var(--fonte-titulo); line-height: 1.12; }
+h1 { font-size: var(--texto-3xl); letter-spacing: -.035em; }
+h2 { font-size: var(--texto-2xl); }
+h3 { font-size: var(--texto-xl); }
+p { margin: 0 0 var(--espaco-2); }
+small, .texto-pequeno { font-size: var(--texto-sm); }
+.somente-leitor { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.pular-conteudo { position: absolute; top: -100px; left: 16px; z-index: 1000; padding: 12px 16px; color: white; background: var(--roxo-escuro); border-radius: var(--raio-sm); }
+.pular-conteudo:focus { top: 12px; }
+.container { width: min(var(--largura-max), calc(100% - 48px)); margin-inline: auto; }
+.secao { padding-block: var(--espaco-6); }
+.secao-clara { background: var(--rosa); }
+.sobretitulo { display: inline-block; margin-bottom: var(--espaco-2); color: var(--coral-escuro); font-size: var(--texto-sm); font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.texto-intro { max-width: 650px; color: var(--texto-suave); font-size: var(--texto-lg); }
+.alinhado-centro { text-align: center; }
+.alinhado-centro .texto-intro { margin-inline: auto; }
+
+</style><style>
+/* Estrutura principal em Grid e utilitarios de 12 colunas */
+.site { min-height: 100vh; display: grid; grid-template-rows: auto 1fr auto; }
+.cabecalho { position: sticky; top: 0; z-index: 100; background: rgba(255,250,252,.96); border-bottom: 1px solid var(--cinza-200); backdrop-filter: blur(12px); }
+.cabecalho-interno { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: var(--espaco-3); }
+.marca { display: inline-flex; align-items: center; gap: 12px; color: var(--roxo-escuro); text-decoration: none; font-weight: 800; font-size: 1.12rem; }
+.marca-simbolo { display: grid; place-items: center; width: 44px; height: 44px; color: white; background: var(--roxo); border-radius: 15px 15px 15px 4px; font-family: var(--fonte-titulo); font-size: 1.4rem; }
+.navegacao { display: flex; align-items: center; gap: var(--espaco-3); }
+.navegacao a, .dropdown-botao { color: var(--texto); font-weight: 700; text-decoration: none; }
+.navegacao a[aria-current="page"] { color: var(--roxo); }
+.menu-mobile { display: none; border: 1px solid var(--cinza-200); border-radius: var(--raio-sm); padding: 10px 12px; color: var(--roxo); background: white; cursor: pointer; }
+.dropdown { position: relative; }
+.dropdown-botao { display: flex; gap: 6px; align-items: center; border: 0; background: transparent; padding: 8px 0; cursor: pointer; }
+.dropdown-lista { position: absolute; top: calc(100% + 10px); left: -16px; display: none; min-width: 220px; padding: 10px; background: white; border: 1px solid var(--cinza-200); border-radius: var(--raio-md); box-shadow: var(--sombra); }
+.dropdown.aberto .dropdown-lista, .dropdown:focus-within .dropdown-lista { display: grid; }
+.dropdown-lista a { padding: 10px 12px; border-radius: var(--raio-sm); }
+.dropdown-lista a:hover { background: var(--rosa); }
+.hero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); align-items: center; gap: var(--espaco-5); padding-block: 72px; }
+.hero-conteudo { max-width: 650px; }
+.hero h1 { margin-bottom: var(--espaco-3); }
+.hero .texto-intro { margin-bottom: var(--espaco-4); }
+.hero-imagem { position: relative; min-height: 410px; overflow: hidden; border-radius: 45% 45% 22px 22px; background: var(--rosa); }
+.hero-imagem img { width: 100%; height: 100%; min-height: 410px; object-fit: cover; }
+.hero-selo { position: absolute; right: 18px; bottom: 18px; max-width: 220px; padding: 18px; color: var(--roxo-escuro); background: white; border-radius: var(--raio-md); box-shadow: var(--sombra); font-weight: 700; }
+.grade-12 { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--espaco-3); }
+.col-12 { grid-column: span 12; } .col-8 { grid-column: span 8; } .col-6 { grid-column: span 6; } .col-4 { grid-column: span 4; } .col-3 { grid-column: span 3; }
+.grade-cartoes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--espaco-3); margin-top: var(--espaco-4); }
+.duas-colunas { display: grid; grid-template-columns: 1fr 1fr; gap: var(--espaco-5); align-items: start; }
+.rodape { padding-block: var(--espaco-5) var(--espaco-3); color: #fdf5fc; background: var(--roxo-escuro); }
+.rodape-grade { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: var(--espaco-4); }
+.rodape h2, .rodape h3 { color: white; }
+.rodape a { color: #f8dceb; }
+.rodape-final { margin-top: var(--espaco-4); padding-top: var(--espaco-2); border-top: 1px solid rgba(255,255,255,.2); font-size: var(--texto-sm); }
+
+</style><style>
+/* Botoes, cards, badges, formularios e feedback */
+.acoes { display: flex; flex-wrap: wrap; gap: var(--espaco-2); align-items: center; }
+.botao { display: inline-flex; justify-content: center; align-items: center; gap: 8px; min-height: 48px; padding: 12px 22px; border: 2px solid transparent; border-radius: 999px; color: white; background: var(--roxo); font-weight: 800; text-decoration: none; cursor: pointer; transition: transform .18s ease, background .18s ease, box-shadow .18s ease; }
+.botao:hover { color: white; background: var(--roxo-escuro); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(64,32,63,.16); }
+.botao:focus-visible { outline: 3px solid var(--coral); outline-offset: 3px; }
+.botao:active { transform: translateY(1px) scale(.99); }
+.botao-secundario { color: var(--roxo); background: transparent; border-color: var(--roxo); }
+.botao-secundario:hover { color: white; background: var(--roxo); }
+.botao-coral { color: var(--roxo-escuro); background: var(--coral); }
+.botao:disabled, .botao[aria-disabled="true"] { color: #777; background: #e4dfe4; border-color: #e4dfe4; cursor: not-allowed; transform: none; box-shadow: none; }
+.cartao { display: flex; flex-direction: column; min-width: 0; overflow: hidden; background: white; border: 1px solid var(--cinza-200); border-radius: var(--raio-lg); box-shadow: 0 6px 22px rgba(64,32,63,.04); }
+.cartao-imagem { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; background: var(--rosa); }
+.cartao-corpo { display: flex; flex: 1; flex-direction: column; align-items: flex-start; padding: var(--espaco-3); }
+.cartao-corpo p { color: var(--texto-suave); }
+.cartao-corpo .botao { margin-top: auto; }
+.badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: var(--espaco-2); }
+.badge { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 999px; color: var(--roxo); background: var(--rosa); font-size: var(--texto-xs); font-weight: 800; }
+.badge-verde { color: var(--sucesso); background: var(--verde-claro); }
+.badge-coral { color: #7c3437; background: #ffe2df; }
+.numero-impacto { color: var(--roxo); font-family: var(--fonte-titulo); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; line-height: 1.1; }
+.bloco-impacto { padding: var(--espaco-3); background: white; border-radius: var(--raio-md); }
+.lista-check { display: grid; gap: 12px; padding: 0; list-style: none; }
+.lista-check li { display: flex; gap: 12px; align-items: flex-start; }
+.lista-check li::before { content: '✓'; display: grid; place-items: center; flex: 0 0 26px; width: 26px; height: 26px; color: white; background: var(--verde); border-radius: 50%; font-weight: 800; }
+.formulario { padding: var(--espaco-4); background: white; border: 1px solid var(--cinza-200); border-radius: var(--raio-lg); box-shadow: var(--sombra); }
+.campo { display: grid; gap: 6px; margin-bottom: var(--espaco-2); }
+.campo label, .rotulo { color: var(--roxo-escuro); font-weight: 800; }
+.campo input, .campo select, .campo textarea { width: 100%; min-height: 48px; padding: 12px 14px; color: var(--texto); background: white; border: 1px solid #b9adb9; border-radius: var(--raio-sm); }
+.campo textarea { min-height: 130px; resize: vertical; }
+.campo input:focus, .campo select:focus, .campo textarea:focus { outline: 0; border-color: var(--roxo); box-shadow: var(--foco); }
+.campo input:invalid:not(:placeholder-shown), .campo textarea:invalid:not(:placeholder-shown) { border-color: var(--alerta); background: var(--alerta-fundo); }
+.campo input:valid:not(:placeholder-shown), .campo textarea:valid:not(:placeholder-shown) { border-color: var(--sucesso); }
+.ajuda-campo { color: var(--texto-suave); font-size: var(--texto-sm); }
+.checkbox-linha { display: flex; gap: 10px; align-items: flex-start; margin: var(--espaco-2) 0; }
+.checkbox-linha input { width: 20px; height: 20px; margin-top: 4px; accent-color: var(--roxo); }
+.alerta { margin-block: var(--espaco-2); padding: 14px 16px; border-radius: var(--raio-sm); border-left: 4px solid; }
+.alerta-info { color: var(--info); background: var(--info-fundo); border-color: var(--info); }
+.alerta-sucesso { color: var(--sucesso); background: var(--sucesso-fundo); border-color: var(--sucesso); }
+.alerta-erro { color: var(--alerta); background: var(--alerta-fundo); border-color: var(--alerta); }
+.toast { position: fixed; right: 24px; bottom: 24px; z-index: 500; max-width: min(380px, calc(100vw - 32px)); padding: 16px 20px; color: white; background: var(--roxo-escuro); border-radius: var(--raio-md); box-shadow: var(--sombra); }
+.toast[hidden] { display: none; }
+.modal-fundo { position: fixed; inset: 0; z-index: 600; display: grid; place-items: center; padding: 24px; background: rgba(35,20,35,.68); }
+.modal-fundo[hidden] { display: none; }
+.modal { width: min(520px, 100%); padding: var(--espaco-4); background: white; border-radius: var(--raio-lg); box-shadow: var(--sombra); }
+.modal-cabecalho { display: flex; justify-content: space-between; align-items: start; gap: 16px; }
+.modal-fechar { border: 0; background: var(--rosa); border-radius: 50%; width: 40px; height: 40px; cursor: pointer; }
+
+</style><style>
+/* Breakpoints: 1200, 992, 768, 600 e 400px */
+@media (max-width: 1200px) {
+  :root { --largura-max: 1080px; }
+  .hero { gap: var(--espaco-4); }
+}
+@media (max-width: 992px) {
+  .hero { grid-template-columns: 1fr 1fr; padding-block: var(--espaco-5); }
+  .grade-cartoes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .col-4, .col-3 { grid-column: span 6; }
+  .rodape-grade { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .container { width: min(100% - 32px, var(--largura-max)); }
+  .menu-mobile { display: inline-flex; align-items: center; gap: 8px; }
+  .navegacao { position: absolute; top: 100%; left: 0; right: 0; display: none; align-items: stretch; flex-direction: column; gap: 4px; padding: 16px 24px 24px; background: var(--fundo); border-bottom: 1px solid var(--cinza-200); box-shadow: var(--sombra); }
+  .navegacao.aberta { display: flex; }
+  .navegacao > a, .dropdown-botao { padding: 12px; text-align: left; }
+  .dropdown-lista { position: static; box-shadow: none; border: 0; background: var(--cinza-100); margin: 4px 0 8px; }
+  .hero, .duas-colunas { grid-template-columns: 1fr; }
+  .hero { gap: var(--espaco-4); }
+  .hero-imagem, .hero-imagem img { min-height: 300px; max-height: 430px; }
+  .col-8, .col-6 { grid-column: span 12; }
+  .secao { padding-block: var(--espaco-5); }
+}
+@media (max-width: 600px) {
+  :root { --texto-2xl: 1.65rem; --espaco-5: 40px; --espaco-6: 48px; }
+  .grade-cartoes { grid-template-columns: 1fr; }
+  .col-4, .col-3 { grid-column: span 12; }
+  .rodape-grade { grid-template-columns: 1fr; gap: var(--espaco-3); }
+  .formulario { padding: var(--espaco-3); }
+  .acoes { align-items: stretch; flex-direction: column; }
+  .acoes .botao { width: 100%; }
+  .hero-selo { left: 14px; right: 14px; bottom: 14px; max-width: none; }
+}
+@media (max-width: 400px) {
+  .container { width: calc(100% - 24px); }
+  .marca { font-size: 1rem; }
+  .marca-simbolo { width: 38px; height: 38px; }
+  .botao { padding: 11px 16px; }
+  .formulario { padding: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+
+</style>
+  <script>
+/* Interacoes acessiveis: menu, dropdown, toast, modal e formulario */
+document.addEventListener('DOMContentLoaded', function () {
+  const botaoMenu = document.querySelector('.menu-mobile');
+  const navegacao = document.querySelector('.navegacao');
+  if (botaoMenu && navegacao) {
+    botaoMenu.addEventListener('click', function () {
+      const aberto = navegacao.classList.toggle('aberta');
+      botaoMenu.setAttribute('aria-expanded', String(aberto));
+      botaoMenu.setAttribute('aria-label', aberto ? 'Fechar menu' : 'Abrir menu');
+    });
+    navegacao.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        if (window.innerWidth <= 768) {
+          navegacao.classList.remove('aberta');
+          botaoMenu.setAttribute('aria-expanded', 'false');
+          botaoMenu.setAttribute('aria-label', 'Abrir menu');
+        }
+      });
+    });
+  }
+
+  const dropdownBotao = document.querySelector('.dropdown-botao');
+  const dropdown = document.querySelector('.dropdown');
+  if (dropdownBotao && dropdown) {
+    dropdownBotao.addEventListener('click', function () {
+      const aberto = dropdown.classList.toggle('aberto');
+      dropdownBotao.setAttribute('aria-expanded', String(aberto));
+    });
+    document.addEventListener('click', function (evento) {
+      if (!dropdown.contains(evento.target)) {
+        dropdown.classList.remove('aberto');
+        dropdownBotao.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  const toast = document.getElementById('toast');
+  document.querySelectorAll('[data-toast]').forEach(function (botao) {
+    botao.addEventListener('click', function () {
+      if (toast) {
+        toast.textContent = botao.dataset.toast || 'Obrigado por apoiar a Vozes Livres!';
+        toast.hidden = false;
+        window.setTimeout(function () { toast.hidden = true; }, 4000);
+      }
+    });
+  });
+
+  const modal = document.getElementById('modal-ajuda');
+  document.querySelectorAll('[data-modal-abrir]').forEach(function (botao) {
+    botao.addEventListener('click', function () {
+      if (modal) {
+        modal.hidden = false;
+        const fechar = modal.querySelector('[data-modal-fechar]');
+        if (fechar) fechar.focus();
+      }
+    });
+  });
+  if (modal) {
+    modal.querySelectorAll('[data-modal-fechar]').forEach(function (botao) {
+      botao.addEventListener('click', function () { modal.hidden = true; });
+    });
+    modal.addEventListener('click', function (evento) {
+      if (evento.target === modal) modal.hidden = true;
+    });
+    document.addEventListener('keydown', function (evento) {
+      if (evento.key === 'Escape') modal.hidden = true;
+    });
+  }
+
+  const formulario = document.querySelector('[data-form-cadastro]');
+  if (formulario) {
+    formulario.addEventListener('submit', function (evento) {
+      evento.preventDefault();
+      if (!formulario.checkValidity()) {
+        formulario.reportValidity();
+        const primeiroInvalido = formulario.querySelector(':invalid');
+        if (primeiroInvalido) primeiroInvalido.focus();
+        return;
+      }
+      const aviso = document.getElementById('mensagem-formulario');
+      if (aviso) {
+        aviso.hidden = false;
+        aviso.textContent = 'Cadastro demonstrativo validado! Nesta versão acadêmica, os dados não são enviados a um servidor.';
+      }
+      formulario.reset();
+    });
+  }
+});
+
+</script>
+</head>
+<body><a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+<div class="site">
+<header class="cabecalho"><div class="container cabecalho-interno"><a class="marca" href="index.html" aria-label="Vozes Livres - página inicial"><span class="marca-simbolo" aria-hidden="true">V</span><span>Vozes Livres</span></a>
+<button class="menu-mobile" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu"><span aria-hidden="true">☰</span> Menu</button>
+<nav class="navegacao" id="menu-principal" aria-label="Navegação principal"><a href="index.html" aria-current="page">Início</a><div class="dropdown"><button class="dropdown-botao" type="button" aria-expanded="false">O que fazemos <span aria-hidden="true">⌄</span></button><div class="dropdown-lista"><a href="#projetos">Acolhimento</a><a href="#projetos">Prevenção à violência</a><a href="#projetos">Autonomia e renda</a></div></div><a href="#projetos">Projetos</a><a href="#participar">Seja voluntário</a><a class="botao botao-coral" href="#participar">Quero apoiar</a></nav></div></header>
+<main id="conteudo">
+<section class="container hero"><div class="hero-conteudo"><span class="sobretitulo">Juntas, somos mais fortes</span><h1>Um futuro livre de violência começa com acolhimento.</h1><p class="texto-intro">A Vozes Livres trabalha para que mulheres encontrem proteção, apoio e oportunidades para reconstruir suas histórias com autonomia e dignidade.</p><div class="acoes"><a class="botao" href="#projetos">Conheça nossos projetos <span aria-hidden="true">→</span></a><a class="botao botao-secundario" href="#participar">Seja voluntário</a></div><p class="texto-pequeno" style="margin-top:20px">Informação, escuta e apoio sem julgamentos.</p></div><div class="hero-imagem"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNzAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWxsZWRieT0idCBkIj48dGl0bGUgaWQ9InQiPk11bGhlcmVzIHVuaWRhcyBlbSB1bWEgcmVkZSBkZSBhcG9pbzwvdGl0bGU+PGRlc2MgaWQ9ImQiPklsdXN0cmHDp8OjbyBhY29saGVkb3JhIGRlIHRyw6pzIG11bGhlcmVzIGVtIHRvbnMgZGUgcm9zYSwgY29yYWwgZSByb3hvLjwvZGVzYz48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjcwMCIgZmlsbD0iI2Y3ZTlmMiIvPjxjaXJjbGUgY3g9IjcwMCIgY3k9IjE1MCIgcj0iMTAwIiBmaWxsPSIjZThiZmQ4Ii8+PGNpcmNsZSBjeD0iMTgwIiBjeT0iNTMwIiByPSIxMjUiIGZpbGw9IiNlODc5NzgiIG9wYWNpdHk9Ii4zNSIvPjxwYXRoIGQ9Ik0wIDU5MCBRMjQwIDQ2MCA0NTAgNjAwIFQ5MDAgNTYwIFY3MDAgSDBaIiBmaWxsPSIjZDZiNGQxIi8+PGcgc3Ryb2tlPSIjNDAyMDNmIiBzdHJva2Utd2lkdGg9IjciIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTE3NSA3MDAgUTE5MCA0ODAgMjYwIDQwMCBMMzU1IDQwMCBRNDEwIDUwMCA0MjAgNzAwIiBmaWxsPSIjNjQyZDYzIi8+PHBhdGggZD0iTTQ4NSA3MDAgUTQ4MCA0NzAgNTU1IDM4MCBMNjU1IDM4MCBRNzM1IDUwMCA3NDUgNzAwIiBmaWxsPSIjZTg3OTc4Ii8+PHBhdGggZD0iTTMxNSA3MDAgUTMzMCA0OTAgMzkwIDQzMCBMNDkwIDQzMCBRNTQwIDUyMCA1NTUgNzAwIiBmaWxsPSIjNDc3YTYzIi8+PC9nPjxnIHN0cm9rZT0iIzQwMjAzZiIgc3Ryb2tlLXdpZHRoPSI2Ij48Y2lyY2xlIGN4PSIzMDgiIGN5PSIyOTUiIHI9Ijc1IiBmaWxsPSIjYjg3NTU1Ii8+PGNpcmNsZSBjeD0iNjA1IiBjeT0iMjY1IiByPSI3OCIgZmlsbD0iIzhjNTIzZiIvPjxjaXJjbGUgY3g9IjQzNSIgY3k9IjMzMCIgcj0iNzAiIGZpbGw9IiNkODlhNzQiLz48L2c+PHBhdGggZD0iTTIzMCAyOTAgUTIxMCAxODUgMzA1IDE4MCBRMzkwIDE4NSAzODIgMjkwIEwzNjUgMjUwIFEzMTUgMjIwIDI1MiAyNzBaIiBmaWxsPSIjMzAyNjMxIi8+PHBhdGggZD0iTTUyNSAyNTAgUTUwNSAxNTUgNjAwIDE1MCBRNjkwIDE1NSA2ODIgMjU1IEw2NTUgMjIwIFE2MDUgMTk1IDU0NSAyMzVaIiBmaWxsPSIjMzAyNjMxIi8+PHBhdGggZD0iTTM2NSAzMjUgUTM1NSAyMzAgNDM1IDIzNSBRNTEwIDIzNSA1MDcgMzMwIEw0ODYgMjk1IFE0NDAgMjcwIDM4OCAzMTBaIiBmaWxsPSIjNjQyZDYzIi8+PGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNDAyMDNmIiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+PHBhdGggZD0iTTI4NSAzMDAgcTE1IDEyIDI4IDAgTTMyNSAzMDAgcTE1IDEyIDI4IDAgTTU4MiAyNzAgcTE1IDEyIDI4IDAgTTYyMiAyNzAgcTE1IDEyIDI4IDAgTTQxMiAzMzMgcTEyIDEwIDI0IDAgTTQ0NCAzMzMgcTEyIDEwIDI0IDAiLz48cGF0aCBkPSJNMzAwIDMzMCBxMTAgMTQgMjUgMCBNNjAwIDMwMCBxMTAgMTQgMjUgMCBNNDI1IDM2MCBxMTAgMTIgMjAgMCIvPjwvZz48cGF0aCBkPSJNMjc1IDQxMCBRMzUwIDQ2MCA0MTAgNDIwIE00OTAgNDQwIFE1NjAgNDkwIDYzNSA0MjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZmFmYyIgc3Ryb2tlLXdpZHRoPSIxNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9zdmc+" alt="Ilustração de três mulheres unidas em uma rede de apoio"><div class="hero-selo">Acolher. Proteger. Transformar.</div></div></section>
+<section class="secao secao-clara"><div class="container"><div class="alinhado-centro"><span class="sobretitulo">Nosso impacto</span><h2>Pequenas ações criam grandes mudanças</h2><p class="texto-intro">Cada conversa, doação e hora voluntária fortalece uma rede de cuidado.</p></div><div class="grade-12" style="margin-top:32px"><div class="col-4 bloco-impacto"><div class="numero-impacto">+320</div><strong>orientações realizadas</strong><p class="texto-pequeno">Exemplo ilustrativo para o projeto acadêmico.</p></div><div class="col-4 bloco-impacto"><div class="numero-impacto">85</div><strong>voluntárias e voluntários</strong><p class="texto-pequeno">Pessoas que dedicam tempo e conhecimento.</p></div><div class="col-4 bloco-impacto"><div class="numero-impacto">12</div><strong>ações comunitárias</strong><p class="texto-pequeno">Encontros de informação e prevenção.</p></div></div></div></section>
+<section class="secao"><div class="container"><div><span class="sobretitulo">Como atuamos</span><h2>Projetos que abrem caminhos</h2><p class="texto-intro">Trabalhamos com acolhimento, prevenção e fortalecimento da autonomia.</p></div><div class="grade-cartoes"><article class="cartao"><img class="cartao-imagem" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDAwIj48cmVjdCB3aWR0aD0iNjQwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI2Y3ZTlmMiIvPjxjaXJjbGUgY3g9IjMyMCIgY3k9IjE1NSIgcj0iOTAiIGZpbGw9IiNlOGJmZDgiLz48cGF0aCBkPSJNNzAgNDAwIFExMDAgMjQwIDIyMCAyMzAgUTMyMCAyMTAgMzIwIDMzMCBRMzIwIDIxMCA0MjAgMjMwIFE1NDAgMjQwIDU3MCA0MDAiIGZpbGw9IiM2NDJkNjMiLz48Y2lyY2xlIGN4PSIyNDUiIGN5PSIxNDUiIHI9IjQ1IiBmaWxsPSIjYjg3NTU1Ii8+PGNpcmNsZSBjeD0iMzk1IiBjeT0iMTQ1IiByPSI0NSIgZmlsbD0iI2Q4OWE3NCIvPjxwYXRoIGQ9Ik0yMDAgMTQwIFExODAgNzUgMjUwIDc1IFEzMDAgODAgMjkwIDE0NSIgZmlsbD0iIzMwMjYzMSIvPjxwYXRoIGQ9Ik0zNTAgMTQwIFEzNDAgNzAgNDAwIDc1IFE0NjUgNzUgNDQwIDE0NSIgZmlsbD0iIzQ3N2E2MyIvPjxwYXRoIGQ9Ik0yNjAgMjUwIFEzMjAgMzAwIDM4MCAyNTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2U4Nzk3OCIgc3Ryb2tlLXdpZHRoPSIxNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9zdmc+" alt="Ilustração de duas pessoas em conversa de apoio"><div class="cartao-corpo"><div class="badges"><span class="badge">Acolhimento</span><span class="badge badge-verde">Escuta segura</span></div><h3>Rede de acolhimento</h3><p>Orientação inicial, escuta respeitosa e encaminhamento para serviços especializados.</p><a class="botao botao-secundario" href="#projetos">Saiba mais</a></div></article><article class="cartao"><img class="cartao-imagem" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDAwIj48cmVjdCB3aWR0aD0iNjQwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI2ZmZjBlZCIvPjxwYXRoIGQ9Ik0zMjAgNDUgTDUwMCAxMTUgVjIzMCBRNDgwIDMxNSAzMjAgMzY1IFExNjAgMzE1IDE0MCAyMzAgVjExNVoiIGZpbGw9IiNlODc5NzgiLz48cGF0aCBkPSJNMzIwIDgwIEw0NjUgMTM1IFYyMjUgUTQ0MCAyODUgMzIwIDMzMCBRMjAwIDI4NSAxNzUgMjI1IFYxMzVaIiBmaWxsPSIjNjQyZDYzIi8+PHBhdGggZD0iTTIzNSAyMDUgUTI4MCAxNjAgMzIwIDIyMCBRMzYwIDE2MCA0MDUgMjA1IFE0MDUgMjUwIDMyMCAyODUgUTIzNSAyNTAgMjM1IDIwNVoiIGZpbGw9IiNmZmZhZmMiLz48Y2lyY2xlIGN4PSIzMjAiIGN5PSIxOTUiIHI9IjExNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZjdlOWYyIiBzdHJva2Utd2lkdGg9IjgiLz48L3N2Zz4=" alt="Símbolo de proteção em formato de escudo com coração"><div class="cartao-corpo"><div class="badges"><span class="badge badge-coral">Prevenção</span></div><h3>Informação que protege</h3><p>Atividades educativas para reconhecer sinais de violência e divulgar redes de apoio.</p><a class="botao botao-secundario" href="#projetos">Saiba mais</a></div></article><article class="cartao"><img class="cartao-imagem" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDAwIj48cmVjdCB3aWR0aD0iNjQwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI2U0ZjFlOSIvPjxjaXJjbGUgY3g9IjQ4MCIgY3k9IjkwIiByPSI1NSIgZmlsbD0iI2U4Nzk3OCIgb3BhY2l0eT0iLjciLz48cGF0aCBkPSJNMCAzMDAgUTE2MCAyMjAgMzAwIDMwMCBUNjQwIDI4MCBWNDAwIEgwWiIgZmlsbD0iI2I3ZDVjMiIvPjxnIGZpbGw9IiM0NzdhNjMiIHN0cm9rZT0iIzQwMjAzZiIgc3Ryb2tlLXdpZHRoPSI1Ij48cGF0aCBkPSJNODAgNDAwIFE5NSAyMzAgMTgwIDIyMCBRMjcwIDIzNSAyODAgNDAwWiIvPjxwYXRoIGQ9Ik0yNTAgNDAwIFEyNzAgMTkwIDM2NSAxOTAgUTQ3MCAyMDUgNDgwIDQwMFoiLz48cGF0aCBkPSJNNDEwIDQwMCBRNDMwIDI1MCA1MTAgMjQwIFE1ODUgMjUwIDYxMCA0MDBaIi8+PC9nPjxnIGZpbGw9IiNkODlhNzQiIHN0cm9rZT0iIzQwMjAzZiIgc3Ryb2tlLXdpZHRoPSI0Ij48Y2lyY2xlIGN4PSIxODAiIGN5PSIxNzAiIHI9IjQ1Ii8+PGNpcmNsZSBjeD0iMzY1IiBjeT0iMTQwIiByPSI1MCIvPjxjaXJjbGUgY3g9IjUxMCIgY3k9IjE5MCIgcj0iNDIiLz48L2c+PHBhdGggZD0iTTMyMCAyNjUgbDM1IC0zNSAzNSAzNSAtMzUgMzVaIiBmaWxsPSIjZjdlOWYyIi8+PC9zdmc+" alt="Ilustração de um grupo de mulheres reunidas"><div class="cartao-corpo"><div class="badges"><span class="badge badge-verde">Autonomia</span></div><h3>Novos caminhos</h3><p>Oficinas, orientação e parcerias para ampliar oportunidades e independência.</p><a class="botao botao-secundario" href="#projetos">Saiba mais</a></div></article></div><div class="alinhado-centro" style="margin-top:32px"><a class="botao" href="#projetos">Ver todos os projetos</a></div></div></section>
+<section class="secao secao-clara"><div class="container duas-colunas"><div><span class="sobretitulo">Faça parte</span><h2>Uma rede forte começa com você</h2><p class="texto-intro">Compartilhe seu tempo, suas habilidades ou recursos para que mais mulheres encontrem apoio.</p><ul class="lista-check"><li>Ajude na organização de ações comunitárias.</li><li>Compartilhe conhecimentos em oficinas e atividades.</li><li>Contribua com recursos para manter os projetos.</li></ul><div class="acoes"><a class="botao" href="#participar">Quero ser voluntário</a><button class="botao botao-secundario" type="button" data-modal-abrir>Outras formas de apoiar</button></div></div><div class="cartao"><div class="cartao-corpo"><span class="sobretitulo">Transparência</span><h3>Confiança também é cuidado</h3><p>Nosso compromisso é comunicar objetivos, atividades e uso dos recursos com clareza. Os números apresentados nesta demonstração são fictícios e servem apenas para fins acadêmicos.</p><div class="alerta alerta-info" role="note">Este site é um protótipo estudantil. Formulários e doações não realizam operações reais.</div><button class="botao botao-coral" type="button" data-toast="Obrigado por se interessar pela Vozes Livres!">Demonstrar apoio</button></div></div></div></section>
+</main>
+<footer class="rodape"><div class="container"><div class="rodape-grade"><div><a class="marca" href="index.html" style="color:white"><span class="marca-simbolo" style="color:var(--roxo);background:white">V</span><span>Vozes Livres</span></a><p style="margin-top:16px">Acolhimento, prevenção e autonomia para uma vida livre de violência.</p></div><div><h3>Explore</h3><p><a href="#projetos">Nossos projetos</a></p><p><a href="#participar">Voluntariado</a></p><p><a href="#participar">Apoie a causa</a></p></div><div><h3>Contato institucional</h3><p>contato@vozeslivres.org.br</p><p class="texto-pequeno">Endereço e canais oficiais devem ser confirmados antes de publicar.</p></div></div><div class="rodape-final">© 2026 Vozes Livres — Projeto acadêmico. Dados demonstrativos.</div></div></footer>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<div class="modal-fundo" id="modal-ajuda" role="dialog" aria-modal="true" aria-labelledby="modal-titulo" hidden><div class="modal"><div class="modal-cabecalho"><h2 id="modal-titulo">Outras formas de apoiar</h2><button class="modal-fechar" type="button" data-modal-fechar aria-label="Fechar janela">✕</button></div><p>Você pode divulgar os projetos, organizar uma campanha de arrecadação ou se cadastrar para apoiar atividades comunitárias.</p><div class="acoes"><a class="botao" href="#participar">Quero participar</a><button class="botao botao-secundario" type="button" data-modal-fechar>Fechar</button></div></div></div>
+</body></html>
